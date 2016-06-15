@@ -2,5 +2,6 @@ html
 {
     background-color: black;
     color: white;
-    filter: hue-rotate(180deg) invert(95%) saturate(140%);
+    /* filter: hue-rotate(180deg) invert(95%) saturate(140%); */
+    filter: hue-rotate(180deg) invert(100%);
 }

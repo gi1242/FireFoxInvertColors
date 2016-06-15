@@ -3,6 +3,7 @@ var tabs = require("sdk/tabs");
 var { attach, detach } = require('sdk/content/mod');
 var { Style } = require('sdk/stylesheet/style');
 var { ToggleButton } = require("sdk/ui/button/toggle");
+var { Hotkey } = require('sdk/hotkeys');
 var SStore = require("sdk/simple-storage");
 
 var style = Style({
@@ -29,6 +30,14 @@ var button = ToggleButton({
       SStore.storage.GlobalState = state.checked;
       HandleState();
   }
+});
+
+var toggleHotkey = Hotkey({
+    combo: "accel-shift-r",
+    onPress: function() {
+	SStore.storage.GlobalState = !SStore.storage.GlobalState;
+	HandleState();
+    }
 });
 
 function HandleState() {
